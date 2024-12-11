@@ -81,3 +81,113 @@ a:nth-of-type(12) {
 
 
 /* Hieronder komen jouw animaties */
+
+a:nth-of-type(1) {
+  position: relative;
+  background: var(--highlight-secondary);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.shake{
+  animation-name: shake;
+  animation-duration: 1.2s;
+}
+
+@keyframes shake{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.colorchange{
+  background: var(--highlight-secondary);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.updown{
+  filter: blur(2px);
+}
+
+.flip{
+  transform: rotate(180deg);
+}
+
+.space{
+  rotate: -30deg;
+  background-color: blue;
+}
+
+
+.animated-link {
+  transform: translateY(-20px); /* Move upward */
+  opacity: 0; /* Fade out */
+  transition: transform 0.5s, opacity 0.5s; /* Smooth transitions */
+}
+
+
+
+/* Ripple-specific styles */
+.ripple-anchor {
+  position: relative;
+  overflow: hidden; /* To clip the ripple effect within the anchor */
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--highlight-primary);
+  transform: scale(0);
+  animation: ripple-animation 0.8s linear;
+  pointer-events: none; /* Prevent interaction with the ripple */
+}
+
+/* Ripple animation */
+@keyframes ripple-animation {
+  to {
+    transform: scale(4); /* Grow outward */
+    opacity: 0; /* Fade out */
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.bounce-on-click {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.border-on-move {
+  display: inline-block;
+  padding: 1em;
+  border: 3px solid var(--highlight-primary);
+  border-radius: var(--pill);
+  color: var(--highlight-primary);
+  transition: border-color 0.3s;
+}
+
+
+
+
+
+
